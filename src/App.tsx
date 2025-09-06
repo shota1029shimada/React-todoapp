@@ -1,3 +1,4 @@
+// アプリケーション全体の構造と動作を統括するルートコンポーネントまたはメインコンポーネントとして機能
 import { useState } from "react"; // Reactの状態管理フックを使う
 
 // Todo の型定義（TypeScript）
@@ -81,7 +82,9 @@ function App() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        width: "100vw",   // ← 画面全幅を指定
+        height: "100vh",  // ← 画面全高を指定
+        margin: 0,        // ← 余白を消す
         fontFamily: "sans-serif",
         background: "#f5f5f5",
       }}
@@ -99,7 +102,7 @@ function App() {
         }}
       >
         {/* ここがブラウザに「大文字で表示されるタイトル」部分 */}
-        <h1 style={{ marginBottom: "1rem" }}>Todo App</h1>
+        <h1 style={{ marginBottom: "1rem" }}>Todo App3</h1>
 
         {/* 入力フォーム（新しいタスクを追加する欄） */}
         <div style={{ display: "flex", gap: "0.5rem" }}>
