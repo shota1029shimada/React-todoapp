@@ -1,9 +1,9 @@
 /* アプリケーションの全体的なスタイルを記述するCSSファイル*/
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#root {/*ルート要素*/
+  max-width: 1280px;/*ルート要素の最大幅*/
+  margin: 0 auto;   /*ルート要素のマージン*/
+  padding: 2rem;    /*ルート要素のパディング*/
+  text-align: center;/*ルート要素のテキストを中央揃え*/
 }
 
 .logo {
@@ -18,7 +18,7 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+/*ロゴのアニメーション*/
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,7 +27,7 @@
     transform: rotate(360deg);
   }
 }
-
+/*ロゴのアニメーション*/
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

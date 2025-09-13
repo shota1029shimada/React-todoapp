@@ -1,9 +1,10 @@
 // 1つのタスクを表示・編集・削除するコンポーネント
-import { useState } from "react";
-import { type Todo } from "../types/todo";
+import { useState } from "react"; // React の useState フックをインポート
+import { type Todo } from "../types/todo"; // Todo 型をインポート（id, text, completed などを持つ型）
 // Todo 型をインポート（id, text, completed などを持つ型）
 
 type Props = {
+	// コンポーネントのpropsの型を定義
 	todo: Todo; // 表示する1つのタスク
 	onToggle: (id: number) => void; // 完了状態の切り替えを親(App)に依頼する関数
 	onDelete: (id: number) => void; // 削除を親(App)に依頼する関数
@@ -28,11 +29,22 @@ const TodoItem = ({ todo, onToggle, onDelete, onEdit }: Props) => {
 			style={{
 				display: "flex",
 				alignItems: "center",
-				justifyContent: "space-between",
+				justifyContent: "center",
 				marginBottom: "0.5rem",
+				gap: "0.5rem",
+				width: "100%",
+				textAlign: "center",
 			}}
 		>
-			<div style={{ flex: 1 }}>
+			<div
+				style={{
+					display: "flex",
+					alignItems: "center",
+					gap: "0.5rem",
+					justifyContent: "center",
+					flex: "1",
+				}}
+			>
 				{/* 完了チェックボックス */}
 				<input
 					type="checkbox"
@@ -48,12 +60,12 @@ const TodoItem = ({ todo, onToggle, onDelete, onEdit }: Props) => {
 							type="text"
 							value={editText}
 							onChange={(e) => setEditText(e.target.value)} // 入力が変わったら更新
-							style={{ padding: "0.25rem", flex: 1 }}
+							style={{ padding: "0.25rem", minWidth: "200px" }}
 						/>
 						<button
 							onClick={handleSave}
 							style={{
-								marginLeft: "0.5rem",
+								marginLeft: "0",
 								padding: "0.25rem 0.5rem",
 								background: "green",
 								color: "white",
@@ -86,13 +98,13 @@ const TodoItem = ({ todo, onToggle, onDelete, onEdit }: Props) => {
 			<button
 				onClick={() => onDelete(todo.id)} // 親に「削除して」と依頼
 				style={{
-					background: "red",
-					color: "white",
-					border: "none",
-					borderRadius: "4px",
-					cursor: "pointer",
-					padding: "0.25rem 0.5rem",
-					marginLeft: "0.5rem",
+					background: "red", //削除ボタンの背景色
+					color: "white", //削除ボタンの文字色
+					border: "none", //削除ボタンの枠線
+					borderRadius: "4px", //削除ボタンの角丸
+					cursor: "pointer", //削除ボタンのカーソル
+					padding: "0.25rem 0.5rem", //削除ボタンのパディング
+					marginLeft: "0", //削除ボタンの左マージン
 				}}
 			>
 				削除
